@@ -593,7 +593,7 @@ boolean LTR303::readByte(byte address, byte &value)
 	// Read requested byte
 	if (_error == 0)
 	{
-		Wire.requestFrom(_i2c_address, 1);
+		Wire.requestFrom(_i2c_address, 1u);
 		if (Wire.available() == 1)
 		{
 			value = Wire.read();
@@ -640,7 +640,7 @@ boolean LTR303::readUInt(byte address, unsigned int &value)
 	// Read two bytes (low and high)
 	if (_error == 0)
 	{
-		Wire.requestFrom(_i2c_address, 2);
+		Wire.requestFrom(_i2c_address, 2u);
 		if (Wire.available() == 2)
 		{
 			low = Wire.read();
